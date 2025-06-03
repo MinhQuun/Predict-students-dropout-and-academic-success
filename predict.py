@@ -38,9 +38,10 @@ def predict_page():
     if st.sidebar.button("Dự đoán"):
         st.subheader("Kết quả dự đoán")
         if prediction == 1:
-            st.error("Có nguy cơ bỏ học :(")
+            st.error("🚨 Có nguy cơ bỏ học 🥲")
+            st.snow()
         else:
-            st.success("Dự kiến tốt nghiệp :D")
+            st.success("🎓 Dự kiến tốt nghiệp 😘")
             st.balloons()
 
         st.subheader("Khuyến nghị hỗ trợ")
@@ -58,31 +59,31 @@ def recommend(prediction, tuition_up_to_date, grade_sem1, grade_sem2):
         if tuition_up_to_date == 0 and grade_sem2 < 4:
             st.markdown("""
             **Hỗ trợ tài chính:**
-            [Chính sách hỗ trợ học phí - Bộ Giáo dục & Đào tạo](https://moet.gov.vn/)
+            [Chính sách hỗ trợ học phí - HUIT](https://huit.edu.vn/thong-bao/tai-chinh.html)
 
             **Tư vấn học tập:**
-            [Phòng tư vấn sinh viên ĐHCN](https://www.vku.udn.vn/)
+            [Phòng Công tác Sinh viên - HUIT](https://www.facebook.com/ctsv.huit/?locale=vi_VN)
 
             **Hỗ trợ học tập:**
-            [Học trực tuyến tại Kyna.vn](https://kyna.vn/)
+            [Hỗ trợ học tập - HUIT](https://thuvien.huit.edu.vn/)
             """)
             with st.expander("Ghi chú"):
                 st.markdown("""
-                Chính sách hỗ trợ học phí dành cho sinh viên có hoàn cảnh khó khăn.
-                Phòng tư vấn giúp sinh viên xây dựng kế hoạch học tập phù hợp.
-                Các nền tảng học trực tuyến hỗ trợ bổ sung kiến thức.
+                - Chính sách hỗ trợ học phí dành cho sinh viên có hoàn cảnh khó khăn.
+                - Phòng CTSV hỗ trợ tư vấn học tập và xây dựng kế hoạch cá nhân
+                - Hệ thống thư viện HUIT cung cấp tài liệu học tập và ôn thi.
                 """)
         elif tuition_up_to_date == 0:
-            st.markdown("**Hỗ trợ tài chính:** Xem chính sách hỗ trợ học phí tại trang chính thức của trường và Bộ Giáo dục.")
+            st.markdown("**Hỗ trợ tài chính:** Xem chính sách tại [HUIT - Học bổng & Hỗ trợ](https://huit.edu.vn/thong-bao/tai-chinh.html)")
         elif grade_sem1 > 5 and grade_sem2 < 4:
             st.markdown("""
             **Tư vấn học tập:**
-            [Phòng tư vấn sinh viên ĐHCN](https://www.vku.udn.vn/)
+            [Phòng Công tác Sinh viên - HUIT](https://www.facebook.com/ctsv.huit/?locale=vi_VN)
 
             **Hỗ trợ học tập:**
-            [Học trực tuyến tại Kyna.vn](https://kyna.vn/)
+            [Hỗ trợ học tập - HUIT](https://thuvien.huit.edu.vn/)
             """)
         elif grade_sem2 < 4:
-            st.markdown("**Tư vấn học tập:** Hãy liên hệ phòng tư vấn để được hỗ trợ cải thiện kết quả học tập.")
+            st.markdown("**Tư vấn học tập:** Đăng ký tư vấn tại [Phòng Công tác Sinh viên - HUIT](https://www.facebook.com/ctsv.huit/?locale=vi_VN)")
         else:
-            st.markdown("Không xác định nguyên nhân rõ ràng. Hãy theo dõi và nỗ lực hơn nữa.")
+            st.markdown("Không xác định nguyên nhân rõ ràng. Liên hệ [Phòng Công tác Sinh viên - HUIT](https://www.facebook.com/ctsv.huit/?locale=vi_VN) để được hỗ trợ.")
